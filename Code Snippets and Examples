@@ -1,0 +1,79 @@
+1. Adding a New Employee 
+
+// Creating a Manager instance to manage employees
+Manager manager = new Manager("1000", "Java");
+
+// Creating a new Employee object
+Employee newEmployee = new Employee("1111", "John Doe", "password");
+
+// Adding the employee using the Manager instance
+boolean success = manager.addEmployee(newEmployee);
+
+if (success) {
+    System.out.println("Employee added successfully!");
+} else {
+    System.out.println("Failed to add employee. ID might already exist.");
+}
+
+Explanation:
+The Manager class is used to manage employee-related tasks.
+A new Employee object is created, and the addEmployee method is used to add it to the system.
+
+2. Creating a New Order
+
+// Create a new order
+Order newOrder = new Order();
+
+// Create some menu items
+MenuItem pizza = new MenuItem("Pizza", 15.99);
+MenuItem soda = new MenuItem("Soda", 1.99);
+
+// Add items to the order with quantities
+newOrder.addItem(pizza, 2); // 2 Pizzas
+newOrder.addItem(soda, 3);  // 3 Sodas
+
+// Display the order total
+System.out.println("Order Total: $" + newOrder.calculateTotal());
+
+Explanation:
+The Order class is used to manage a customer's order.
+Menu items are added to the order with specific quantities, and the total order price is calculated and displayed.
+
+3. Editing an Existing Order
+
+// Retrieve an existing order by ID
+Order existingOrder = orderDatabase.getOrderById("ORDER123");
+
+// Add another item to the order
+MenuItem dessert = new MenuItem("Cake", 5.99);
+existingOrder.addItem(dessert, 1); // Adding 1 Cake
+
+// Remove an item from the order
+existingOrder.removeItem("Pizza");
+
+// Recalculate the total after modification
+System.out.println("Updated Order Total: $" + existingOrder.calculateTotal());
+
+Explanation:
+Orders are retrieved by their ID, modified by adding or removing items, and the total is recalculated accordingly.
+
+4. Deleting an Employee
+
+// Creating a Manager instance to manage employees
+Manager manager = new Manager("1000", "Java");
+
+// Deleting an employee by ID
+boolean deleteSuccess = manager.deleteEmployee("1111");
+
+if (deleteSuccess) {
+    System.out.println("Employee deleted successfully.");
+} else {
+    System.out.println("Failed to delete employee. Employee not found.");
+}
+
+Explanation:
+The deleteEmployee method is used to remove an employee from the system by their ID.
+
+Summary
+These examples provide basic usage of the system's core functionality, such as managing employees, creating and modifying orders, and working with menu items. 
+By following these snippets, developers can easily understand how to extend or modify the system based on their needs.
